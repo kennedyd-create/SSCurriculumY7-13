@@ -6,7 +6,7 @@
 <title>WHS Social Sciences</title>
 <script>
 /* a section is already chosen (address ends in #years-...): keep the chooser hidden while it loads */
-(function(){var h=location.hash.replace("#","");if(h==="years-7-10"||h==="years-11-13")document.documentElement.className="loading";})();
+(function(){document.documentElement.className="loading";})(); /* the year-group chooser is turned off for now: always open a section */
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
@@ -81,7 +81,7 @@ h1{font-family:var(--display);font-size:clamp(24px,5vw,32px);line-height:1.1;mar
 <script>
 (function(){
   var SITES=["years-7-10","years-11-13"], KEY="whs-ss-theme";
-  function chosen(){var h=location.hash.replace("#","");return SITES.indexOf(h)>=0?h:null;}
+  function chosen(){var h=location.hash.replace("#","");return SITES.indexOf(h)>=0?h:"years-7-10";} /* chooser off for now: default to Years 7-10 */
   function open(site){
     var html=JSON.parse(document.getElementById("page-"+site).textContent);
     /* both sections start in the same colour theme (light unless the reader chose dark) */
